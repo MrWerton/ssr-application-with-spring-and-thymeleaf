@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <title>Cadastro de tarefa</title>
+</head>
+<body>
+
+
+<form action="/products/create" method="POST" th:text="${product}">
+    <label>Name: <input th:field="*{product.getName()}" type="text"/></label><br/>
+    <label>Destination: <input th:field="*{product.getDestination()}" type="text"/></label><br/>
+    <label>Price: <input th:field="*{product.getPrice()}" type="text"/></label><br/>
+    <label>Profitability Rate: <input th:field="*{product.getProfitabilityRate()}" type="text"/></label><br/>
+    <label>Term: <input th:field="*{product.getTerm()}" type="text"/></label><br/>
+    <label>Administration Rate: <input th:field="*{product.getAdministrationRate()}" type="text"/></label><br/>
+    <button type="submit">Save</button>
+
+</form>
+</body>
+</html>
