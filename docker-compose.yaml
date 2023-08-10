@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=rosa_db'
+      - 'POSTGRES_PASSWORD=12341234'
+      - 'POSTGRES_USER=rosa'
+    ports:
+      - '5432:5432'

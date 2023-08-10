@@ -1,2 +1,6 @@
-package com.notrew.rosa.modules.product.constants;public enum Status {
+package com.notrew.rosa.modules.product.constants;
+
+public enum Status {
+    AVAILABLE,
+    UNAVAILABLE,
 }

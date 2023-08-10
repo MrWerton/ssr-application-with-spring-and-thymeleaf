@@ -10,4 +10,7 @@ public class RosaApplication {
         SpringApplication.run(RosaApplication.class, args);
     }
 
+
 }
+
+

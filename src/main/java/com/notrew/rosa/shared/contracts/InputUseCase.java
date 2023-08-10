@@ -1,5 +1,5 @@
 package com.notrew.rosa.shared.contracts;
 
-public interface DefaultUseCase<In, Out> {
-    Out call(In data);
+public interface InputUseCase<In> {
+    void call(In data);
 }
