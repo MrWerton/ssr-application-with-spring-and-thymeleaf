@@ -27,7 +27,14 @@ body {
     font-size: 1.3rem;
 }
 
-#header button {
+
+.navigation_link {
+    text-decoration: none;
+
+    text-align: center;
+
+    height: 100%;
+
     margin-top: auto;
     width: 200px;
     border-radius: 10px;
@@ -37,12 +44,14 @@ body {
     color: #eee;
     font-size: 14px;
     cursor: pointer;
+
 }
 
-#header button > a {
-    background-color: transparent;
+.navigation_link:hover {
+    filter: opacity(0.8);
     text-decoration: none;
     color: #eeeeee;
+
 }
 
 #main {
