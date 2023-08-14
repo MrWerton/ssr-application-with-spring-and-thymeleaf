@@ -23,7 +23,7 @@
             <span th:text="${'Status: ' +product.getStatus()}"></span>
             <div class="container_buttons">
                 <button>Excluir</button>
-                <button><a th:href="@{/delete/{id}(id=${product.getId()})}">Delete</a></button>
+                <button><a th:href="@{/products/delete/{id}(id=${product.getId()})}" th:method="get">Delete</a></button>
 
             </div>
         </li>

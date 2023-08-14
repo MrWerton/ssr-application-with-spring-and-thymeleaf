@@ -46,7 +46,7 @@ public class ProductController {
         return "products";
     }
 
-    @DeleteMapping("/delete/{id}")
+    @GetMapping("/delete/{id}")
     public String removeProduct(@PathVariable String id, Model model) {
         removeProductUseCase.call(id);
         return "redirect:/products/";

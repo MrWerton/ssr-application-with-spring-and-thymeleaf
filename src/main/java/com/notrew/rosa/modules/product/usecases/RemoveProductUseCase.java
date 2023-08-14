@@ -16,6 +16,7 @@ public class RemoveProductUseCase implements InputUseCase<String> {
 
     @Override
     public void call(String data) {
+        System.out.println(data);
 
         productRepository.deleteById(data);
     }

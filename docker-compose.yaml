@@ -1,6 +1,8 @@
 services:
-  postgres:
+
+  database:
     image: 'postgres:latest'
+    restart: always
     environment:
       - 'POSTGRES_DB=rosa_db'
       - 'POSTGRES_PASSWORD=12341234'
