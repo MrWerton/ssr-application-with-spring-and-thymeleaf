@@ -10,26 +10,28 @@
 <body>
 <header id="header">
     <h1>Product List</h1>
-    <button class="button_navigate"><a th:href="@{/create}">Add Products</a></button>
+    <a class="navigation_link" th:href="@{/create}">Add Products</a>
 
 </header>
 <main id="main">
     <ul>
         <li th:each="product, index : ${products}">
-            <span th:text=" ${'Name: ' + product.getName()}"></span>
-            <span th:text="${'Administration Rate: ' +product.getAdministrationRate()}"></span>
-            <span th:text="${'Term: ' +product.getTerm()}"></span>
-            <span th:text="${'Profitability Rate: ' +product.getProfitabilityRate()}"></span>
-            <span th:text="${'Destination: ' +product.getDestination()}"></span>
-            <span th:text="${'Status: ' +product.getStatus()}"></span>
+            <div class="item"><b>Name: </b><span th:text=" ${product.getName()}"></span></div>
+            <div class="item"><b>Administration Rate: </b><span th:text=" ${product.getAdministrationRate()}"></span>
+            </div>
+            <div class="item"><b>Term: </b><span th:text=" ${product.getTerm()}"></span></div>
+            <div class="item"><b>Price: </b><span th:text=" ${product.getPrice()}"></span></div>
+            <div class="item"><b>Profitability Rate: </b><span th:text=" ${product.getProfitabilityRate()}"></span>
+            </div>
+            <div class="item"><b>Status: </b><span th:text=" ${product.getStatus()}"></span></div>
+            <div class="item"><b>Destination: </b><span th:text="${product.getDestination()}"></span></div>
 
             <div class="container_buttons">
-                   <span>
+                <span>
                 <a th:href="@{'/update/' + ${product.getId()} + '/UNAVAILABLE'}"
                    th:if="${product.getStatus().toString() == 'AVAILABLE'}">Disable</a>
                  <a th:href="@{'/update/' + ${product.getId()} + '/AVAILABLE'}"
                     th:if="${product.getStatus().toString() == 'UNAVAILABLE'}">Enable</a>
-
             </span>
 
                 <a th:href="@{/delete/{id}(id=${product.getId()})}" th:method="get">Delete</a>
