@@ -111,3 +111,31 @@ body {
     color: #eeeeee;
 }
 
+
+.navigation_link {
+    text-decoration: none;
+
+    text-align: center;
+
+    height: 100%;
+    max-width: 200px;
+
+
+    margin-top: auto;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0.6rem;
+    background-color: #222;
+    border: 0;
+    color: #eee;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+.navigation_link:hover {
+    filter: opacity(0.8);
+    text-decoration: none;
+    color: #eeeeee;
+
+}
