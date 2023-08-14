@@ -21,9 +21,17 @@
             <span th:text="${'Profitability Rate: ' +product.getProfitabilityRate()}"></span>
             <span th:text="${'Destination: ' +product.getDestination()}"></span>
             <span th:text="${'Status: ' +product.getStatus()}"></span>
+
             <div class="container_buttons">
-                <button>Excluir</button>
-                <button><a th:href="@{/products/delete/{id}(id=${product.getId()})}" th:method="get">Delete</a></button>
+                   <span>
+                <a th:href="@{'/products/update/' + ${product.getId()} + '/UNAVAILABLE'}"
+                   th:if="${product.getStatus().toString() == 'AVAILABLE'}">Disable</a>
+                 <a th:href="@{'/products/update/' + ${product.getId()} + '/AVAILABLE'}"
+                    th:if="${product.getStatus().toString() == 'UNAVAILABLE'}">Enable</a>
+
+            </span>
+
+                <a th:href="@{/products/delete/{id}(id=${product.getId()})}" th:method="get">Delete</a>
 
             </div>
         </li>

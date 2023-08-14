@@ -1,7 +1,9 @@
 package com.notrew.rosa.modules.product.controllers;
 
 
+import com.notrew.rosa.modules.product.dtos.ChangeStatusDto;
 import com.notrew.rosa.modules.product.dtos.ProductDTO;
+import com.notrew.rosa.modules.product.usecases.ChangeStatusProductUseCase;
 import com.notrew.rosa.modules.product.usecases.ListProductsUseCase;
 import com.notrew.rosa.modules.product.usecases.RemoveProductUseCase;
 import com.notrew.rosa.modules.product.usecases.SaveProductUseCase;
@@ -15,13 +17,15 @@ import org.springframework.web.bind.annotation.*;
 public class ProductController {
 
     private final SaveProductUseCase saveProductUseCase;
+    private final ChangeStatusProductUseCase changeStatusProductUseCase;
     private final ListProductsUseCase listProductsUseCase;
     private final RemoveProductUseCase removeProductUseCase;
 
 
     @Autowired
-    public ProductController(SaveProductUseCase saveProductUseCase, ListProductsUseCase listProductsUseCase, RemoveProductUseCase removeProductUseCase) {
+    public ProductController(SaveProductUseCase saveProductUseCase, ChangeStatusProductUseCase changeStatusProductUseCase, ListProductsUseCase listProductsUseCase, RemoveProductUseCase removeProductUseCase) {
         this.saveProductUseCase = saveProductUseCase;
+        this.changeStatusProductUseCase = changeStatusProductUseCase;
         this.listProductsUseCase = listProductsUseCase;
         this.removeProductUseCase = removeProductUseCase;
     }
@@ -36,6 +40,13 @@ public class ProductController {
     @PostMapping("/create")
     public String processForm(@ModelAttribute(value = "product") ProductDTO product) {
         saveProductUseCase.call(product);
+        return "redirect:/products/";
+    }
+
+    @GetMapping("/update/{id}/{status}")
+    public String processForm(@PathVariable("id") String id, @PathVariable("status") String status) {
+        final var newData = new ChangeStatusDto(id, status);
+        changeStatusProductUseCase.call(newData);
         return "redirect:/products/";
     }
 
