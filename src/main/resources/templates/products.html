@@ -10,7 +10,8 @@
 <body>
 <header id="header">
     <h1>Product List</h1>
-    <button class="button_navigate" onclick="navigateToList()">Add Product</button>
+    <button class="button_navigate"><a th:href="@{/create}">Add Products</a></button>
+
 </header>
 <main id="main">
     <ul>
@@ -24,24 +25,20 @@
 
             <div class="container_buttons">
                    <span>
-                <a th:href="@{'/products/update/' + ${product.getId()} + '/UNAVAILABLE'}"
+                <a th:href="@{'/update/' + ${product.getId()} + '/UNAVAILABLE'}"
                    th:if="${product.getStatus().toString() == 'AVAILABLE'}">Disable</a>
-                 <a th:href="@{'/products/update/' + ${product.getId()} + '/AVAILABLE'}"
+                 <a th:href="@{'/update/' + ${product.getId()} + '/AVAILABLE'}"
                     th:if="${product.getStatus().toString() == 'UNAVAILABLE'}">Enable</a>
 
             </span>
 
-                <a th:href="@{/products/delete/{id}(id=${product.getId()})}" th:method="get">Delete</a>
+                <a th:href="@{/delete/{id}(id=${product.getId()})}" th:method="get">Delete</a>
 
             </div>
         </li>
     </ul>
 </main>
 
-<script>
-    function navigateToList() {
-        window.location.href = /*[[ @{'/products/list'} ]]*/ 'http://localhost:8080/products/create';
-    }
-</script>
+
 </body>
 </html>

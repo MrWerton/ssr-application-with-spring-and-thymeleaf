@@ -13,7 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/products")
+@RequestMapping("/")
 public class ProductController {
 
     private final SaveProductUseCase saveProductUseCase;
@@ -40,14 +40,14 @@ public class ProductController {
     @PostMapping("/create")
     public String processForm(@ModelAttribute(value = "product") ProductDTO product) {
         saveProductUseCase.call(product);
-        return "redirect:/products/";
+        return "redirect:/";
     }
 
     @GetMapping("/update/{id}/{status}")
     public String processForm(@PathVariable("id") String id, @PathVariable("status") String status) {
         final var newData = new ChangeStatusDto(id, status);
         changeStatusProductUseCase.call(newData);
-        return "redirect:/products/";
+        return "redirect:/";
     }
 
     @GetMapping("/")
@@ -60,7 +60,7 @@ public class ProductController {
     @GetMapping("/delete/{id}")
     public String removeProduct(@PathVariable String id, Model model) {
         removeProductUseCase.call(id);
-        return "redirect:/products/";
+        return "redirect:/";
     }
 
 }
