@@ -34,9 +34,11 @@ body {
     text-align: center;
 
     height: 100%;
+    max-width: 200px;
+
 
     margin-top: auto;
-    width: 200px;
+    width: 100%;
     border-radius: 10px;
     padding: 0.6rem;
     background-color: #222;
@@ -60,6 +62,8 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    padding: 1rem;
+
 }
 
 .form {
