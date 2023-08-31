@@ -16,15 +16,19 @@
 <main id="main">
     <ul>
         <li th:each="product, index : ${products}">
-            <div class="item"><b>Name: </b><span th:text=" ${product.getName()}"></span></div>
-            <div class="item"><b>Administration Rate: </b><span th:text=" ${product.getAdministrationRate()}"></span>
+            <div class="item"><b>Nome: </b><span th:text=" ${product.getName()}"></span></div>
+            <div class="item"><b>Taxa de Administração: </b><span th:text=" ${product.getAdministrationRate()}"></span>
             </div>
-            <div class="item"><b>Term: </b><span th:text=" ${product.getTerm()}"></span></div>
-            <div class="item"><b>Price: </b><span th:text=" ${product.getPrice()}"></span></div>
-            <div class="item"><b>Profitability Rate: </b><span th:text=" ${product.getProfitabilityRate()}"></span>
+            <div class="item"><b>Prazo: </b><span th:text=" ${product.getTerm()}"></span></div>
+            <div class="item"><b>Preço: </b><span th:text=" ${product.getPrice()}"></span></div>
+            <div class="item"><b>Taxa de Rentabilidade: </b><span th:text=" ${product.getProfitabilityRate()}"></span>
             </div>
             <div class="item"><b>Status: </b><span th:text=" ${product.getStatus()}"></span></div>
-            <div class="item"><b>Destination: </b><span th:text="${product.getDestination()}"></span></div>
+            <div class="item"><b>Destino: </b><span th:text="${product.getDestination()}"></span></div>
+            <div class="item"><b>Data de Validade: </b><span
+                    th:text="${product.getDueDate()}"></span></div>
+            <div class="item"><b>Tem Liquidez diária?: </b><span
+                    th:text="${product.getDailyLiquidity()? 'sim': 'não'}"></span></div>
 
             <div class="container_buttons">
                 <span>

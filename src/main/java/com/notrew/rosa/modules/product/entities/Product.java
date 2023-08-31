@@ -28,5 +28,11 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Column(name = "due_date")
+    private String dueDate;
+
+
+    @Column(name = "daily_liquidity")
+    private Boolean dailyLiquidity;
 
 }

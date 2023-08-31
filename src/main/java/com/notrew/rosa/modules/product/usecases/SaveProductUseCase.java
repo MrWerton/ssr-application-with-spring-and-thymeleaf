@@ -25,6 +25,7 @@ public class SaveProductUseCase implements InputUseCase<ProductDTO> {
         product.setId(UUIDGenerator.generate());
         product.setStatus(Status.AVAILABLE);
         BeanUtils.copyProperties(data, product);
+        System.out.println(product);
         productRepository.save(product);
     }
 }

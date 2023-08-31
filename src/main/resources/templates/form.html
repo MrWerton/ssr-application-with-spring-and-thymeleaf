@@ -21,39 +21,57 @@
     <form action="/create" class="form" method="post"
           th:object="${product}">
         <div class="container_input">
-            <label class="label" for="name">Name</label>
+            <label class="label" for="name">Nome</label>
             <input class="input" id="name" required th:field="*{name}" th:maxlength="32"
                    type="text">
         </div>
         <div class="container_input">
-            <label class="label" for="destination">Destination</label>
+            <label class="label" for="destination">Destino</label>
             <input class="input" id="destination" required th:field="*{destination}"
                    th:maxlength="180"
                    type="text">
         </div>
 
         <div class="container_input">
-            <label class="label" for="price">Price </label>
-            <input class="input" id="price" required th:field="*{price}"
-                   type="number">
-        </div>
-        <div class="container_input">
-            <label class="label" for="profitabilityRate">Profitability Rate </label>
+            <label class="label" for="profitabilityRate">Taxa de Rentabilidade</label>
             <input class="input" id="profitabilityRate" required th:field="*{profitabilityRate}"
                    th:max="20"
                    th:min="1" th:type="number"
                    type="text">
         </div>
-        <div class="container_input">
-            <label class="label" for="term">Term</label>
-            <input class="input" id="term" required th:field="*{term}" th:max="48"
-                   th:min="0"
-                   type="number">
+
+        <div class="row_inputs">
+
+            <div class="container_input">
+                <label class="label" for="price">Preço</label>
+                <input class="input" id="price" required th:field="*{price}"
+                       type="number">
+            </div>
+            <div class="container_input">
+                <label class="label" for="term">Prazo</label>
+                <input class="input" id="term" required th:field="*{term}" th:max="48"
+                       th:min="0"
+                       type="number">
+            </div>
+
         </div>
-        <div class="container_input">
-            <label class="label" for="administrationRate">Administration Rate</label>
-            <input class="input" id="administrationRate" required th:field="*{administrationRate}"
-                   type="number">
+        <div class="row_inputs">
+
+            <div class="container_input">
+                <label class="label" for="administrationRate">Taxa de Administração</label>
+                <input class="input" id="administrationRate" required th:field="*{administrationRate}"
+                       type="number">
+            </div>
+            <div class="container_input">
+                <label class="label" for="dueDate">Data de vencimento</label>
+                <input class="input" id="dueDate" required th:field="*{dueDate}"
+                       type="date">
+            </div>
+        </div>
+        <div class="container_input_checkbox">
+            <input id="dailyLiquidity" th:field="*{dailyLiquidity}" type="checkbox"/>
+            <label class="label" for="dailyLiquidity">Liquidez Diária</label>
+
         </div>
 
 

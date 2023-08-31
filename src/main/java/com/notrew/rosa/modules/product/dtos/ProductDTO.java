@@ -13,6 +13,8 @@ public class ProductDTO {
     private String destination;
     private String price;
     private String profitabilityRate;
+    private Boolean dailyLiquidity;
+    private String dueDate;
     private int term;
     private double administrationRate;
 }

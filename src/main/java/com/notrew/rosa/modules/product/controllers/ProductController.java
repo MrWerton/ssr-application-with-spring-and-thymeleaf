@@ -44,6 +44,7 @@ public class ProductController {
 
     @PostMapping("/create")
     public String processForm(@ModelAttribute(value = "product") ProductDTO product) {
+
         saveProductUseCase.call(product);
         return "redirect:/";
     }

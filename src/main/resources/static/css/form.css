@@ -15,7 +15,7 @@ body {
 
 #header {
     box-shadow: 1px 2px #eee;
-    height: min(10vh, 80px);
+    height: 10vh;
     padding: 1rem;
     background-color: white;
     display: flex;
@@ -58,19 +58,22 @@ body {
 
 #main {
     width: 100%;
-    height: 100%;
+    height: 90vh;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+
     padding: 1rem;
+
 
 }
 
 .form {
     width: 400px;
-    height: 600px;
+    height: auto;
     display: flex;
     gap: 10px;
+
 
     flex-direction: column;
     border-radius: 10px;
@@ -116,4 +119,33 @@ input:focus {
 .label {
     font-weight: 500;
     font-size: 1rem;
+}
+
+.container_input_checkbox {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+
+
+}
+
+
+.container_input_checkbox input {
+    width: auto;
+    height: 50px;
+
+}
+
+.container_input_checkbox span {
+    width: 100%;
+    height: 50px;
+}
+
+
+.row_inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 }
